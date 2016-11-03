@@ -8,6 +8,7 @@ RUN apk --update add nginx
 RUN sed -i "s#root   html;#root   /usr/share/nginx/html;#g" /etc/nginx/nginx.conf
 RUN ln -sf /dev/stdout /var/log/nginx/access.log \
 	&& ln -sf /dev/stderr /var/log/nginx/error.log
+RUN echo hello
 
 # Add 2048 stuff into Nginx server
 COPY . /usr/share/nginx/html
